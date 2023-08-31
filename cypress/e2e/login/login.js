@@ -1,3 +1,4 @@
+
 import {Before,Given,When,Then} from "cypress-cucumber-preprocessor/steps"
 
 
@@ -8,19 +9,16 @@ let uemail
 let upass
 
 Before(()=>{
+    cy.visit("https://demo.nopcommerce.com/")
     cy.fixture('loginData.json').then((data)=>{
          uemail=data.emailId
          upass=data.password
 
     })
 })
-///<reference types="cypress"/>
-
-
-
 Given("user on login page",()=>{
     
-    cy.visit("https://demo.nopcommerce.com/")
+  //  cy.visit("https://demo.nopcommerce.com/")
 
 })
 
@@ -31,7 +29,7 @@ When('user type username and password',()=>{
     loginpge.clickOnLoginLink()
     loginpge.enterEmailId(uemail)
     loginpge.enterPassword(upass)
-   loginpge.clickOnLoginBtn()
+    loginpge.clickOnLoginBtn()
 })
 
 Then('user should be on home page',()=>{

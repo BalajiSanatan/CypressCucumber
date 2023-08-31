@@ -7,6 +7,6 @@ module.exports = defineConfig({
       on('file:preprocessor', cucumber())
       // implement node event listeners here
     },
-    specPattern: "cypress/e2e/*.feature",
+   // specPattern: "cypress/e2e/*.feature",
   },
 });
