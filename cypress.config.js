@@ -7,6 +7,15 @@ module.exports = defineConfig({
       on('file:preprocessor', cucumber())
       // implement node event listeners here
     },
-   // specPattern: "cypress/e2e/*.feature",
+   specPattern: "cypress/e2e/*.feature",
   },
+  
+    "reporter": "mochawesome",
+    "reporterOptions": {
+       "reportDir": "cypress/results",
+       "overwrite": false,
+       "html":true,
+       "json": false
+    },
+  
 });
